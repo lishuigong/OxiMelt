@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "If you use OxiMelt, please cite the associated paper."
+title: "OxiMelt: Formula-only Oxide Melting Point Calculator"
+author:"Jiang Li"
+version: 1.2.0
+date-released: 2026-09-22
+license: MIT

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oximelt"
+version = "1.2.0"
+description = "Formula-only oxide melting-point calculator implementing the frozen oxygen-referenced 3P relation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["oxide", "melting point", "ceramics", "materials informatics", "analytical model"]
+
+[project.scripts]
+oximelt = "oximelt.cli:main"
+oximelt-gui = "oximelt.gui:main"
+
+[tool.setuptools]
+packages = ["oximelt"]
+
+[tool.setuptools.data-files]
+"data" = [
+  "data/model.json",
+  "data/element_properties.csv",
+  "data/simple_oxide_reference_states.csv",
+  "data/training_pair_landscape.csv",
+  "data/hf_local_residual_support.csv"
+]

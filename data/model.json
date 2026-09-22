@@ -1,0 +1,46 @@
+{
+  "model_name": "OxiMelt-3P",
+  "version": "1.2.0",
+  "equation": "Tm = T0 + sum_(i<j) xi*xj*[b0 + b1*E_strain,ij + b2*E_chem,ij]",
+  "b0_K": -792.5130673853114,
+  "b1_K_per_descriptor": 18.945566079895755,
+  "b2_K_per_descriptor": 233.31975001858584,
+  "lambda": 3.5,
+  "oxygen_pauling_en": 3.44,
+  "radius_property": "Ionic radius",
+  "validated_two_cation_group_cv_rmse_K": 224.13056627004184,
+  "validated_three_cation_zero_shot_rmse_K": 164.80833099169848,
+  "validated_three_cation_zero_shot_mae_K": 133.3726529062611,
+  "validated_three_cation_zero_shot_r2": 0.8424844963083608,
+  "notes": [
+    "O(-II) is used only as a conventional formal oxidation-state assignment for neutrality/reference-state matching.",
+    "The model does not interpret formal oxidation state as actual local atomic charge.",
+    "For two-cation HfO2-rich oxygen-vacancy compositions, OxiMelt can report an OOF-calibrated family estimate using the frozen binary residual profile.",
+    "For predeclared three-cation HfO2-rich oxygen-vacancy compositions, OxiMelt can apply the frozen family-specific binary-OOF residual transfer when support coverage is sufficient.",
+    "The Hf-family residual correction is not a general oxygen-vacancy thermodynamic correction."
+  ],
+  "hf_local_transfer": {
+    "enabled": true,
+    "scope": "two-cation Hf-family OOF calibration and three-cation Hf-family residual transfer",
+    "host_min_fraction": 0.55,
+    "vacancy_min": 0.005,
+    "hf_valence_tol": 1e-06,
+    "min_support_coverage": 0.8,
+    "exact_host_fraction_tol": 0.01,
+    "max_nearest_host_fraction_distance": 0.03,
+    "max_interpolation_span": 0.15,
+    "renormalize_supported": false,
+    "support_source": "binary chemical-system out-of-fold residuals only",
+    "three_cation_labels_used_to_construct_correction": false,
+    "validated_local_subset_n": 6,
+    "validated_global_3P_rmse_on_local_subset_K": 436.6475480612337,
+    "validated_local_transfer_rmse_on_local_subset_K": 9.232572621546607,
+    "validated_hybrid_overall_rmse_K": 143.75285144854394,
+    "binary_support_dopants": [
+      "Lu",
+      "Sc",
+      "Yb"
+    ],
+    "binary_output_semantics": "OOF-calibrated family estimate; not an independent external-validation prediction"
+  }
+}
