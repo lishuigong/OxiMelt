@@ -11,8 +11,8 @@ class OxiMeltApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("OxiMelt — Oxide Melting Point Calculator")
-        self.geometry("1080x760")
-        self.minsize(940, 680)
+        self.geometry("1080x800")
+        self.minsize(940, 720)
 
         self.current_result = None
         self.batch_output_path = None
@@ -112,18 +112,18 @@ class OxiMeltApp(tk.Tk):
         result_box.columnconfigure(1, weight=2)
 
         self.summary_text = tk.Text(
-            self.single_tab, height=8, wrap="word", font=("Consolas", 10)
+            self.single_tab, height=14, wrap="word", font=("Consolas", 10)
         )
-        self.summary_text.pack(fill="x", pady=(0, 10))
+        self.summary_text.pack(fill="x", pady=(0, 6))
         self.summary_text.configure(state="disabled")
 
-        detail_box = ttk.LabelFrame(self.single_tab, text="Pairwise Calculation Details", padding=8)
-        detail_box.pack(fill="both", expand=True)
+        detail_box = ttk.LabelFrame(self.single_tab, text="Pairwise Calculation Details", padding=6)
+        detail_box.pack(fill="x", expand=False)
 
         columns = (
             "pair", "xi", "xj", "estrain", "echem", "omega", "contribution", "seen"
         )
-        self.detail_tree = ttk.Treeview(detail_box, columns=columns, show="headings")
+        self.detail_tree = ttk.Treeview(detail_box, columns=columns, show="headings", height=3)
         headings = {
             "pair": "Pair", "xi": "x_i", "xj": "x_j", "estrain": "E_strain",
             "echem": "E_chem", "omega": "Omega_ij (K)",
@@ -138,7 +138,7 @@ class OxiMeltApp(tk.Tk):
             self.detail_tree.column(c, width=widths[c], anchor="center")
         ysb = ttk.Scrollbar(detail_box, orient="vertical", command=self.detail_tree.yview)
         self.detail_tree.configure(yscrollcommand=ysb.set)
-        self.detail_tree.pack(side="left", fill="both", expand=True)
+        self.detail_tree.pack(side="left", fill="y", expand=True)
         ysb.pack(side="right", fill="y")
 
     def _build_batch_tab(self):
