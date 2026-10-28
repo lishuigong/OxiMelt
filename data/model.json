@@ -1,0 +1,49 @@
+{
+  "model_name": "OxiMelt-3P",
+  "equation": "Tm = T0 + sum_(i<j) xi*xj*[b0 + b1*E_strain,ij + b2*E_chem,ij]",
+  "b0_K": -792.5130673853114,
+  "b1_K_per_descriptor": 18.945566079895755,
+  "b2_K_per_descriptor": 233.31975001858584,
+  "lambda": 3.5,
+  "oxygen_pauling_en": 3.44,
+  "radius_property": "Ionic radius",
+  "validated_two_cation_group_cv_rmse_K": 224.13056627004184,
+  "validated_three_cation_zero_shot_rmse_K": 164.80833099169848,
+  "validated_three_cation_zero_shot_mae_K": 133.3726529062611,
+  "validated_three_cation_zero_shot_r2": 0.8424844963083608,
+  "notes": [
+    "The global prediction uses three fixed coefficients, elemental properties and simple-oxide reference states.",
+    "O(-II) is a formal-valence convention, not a measured local atomic charge.",
+    "The Hf-family estimate scales signed binary chemical-system OOF residuals by nominal vacancy-fraction ratios.",
+    "The six literature family targets have the same vacancy fractions as their supports and do not validate concentration scaling.",
+    "A family estimate is not an isolated thermodynamic vacancy contribution or guaranteed improvement over the global prediction."
+  ],
+  "hf_local_transfer": {
+    "enabled": true,
+    "scope": "nominal-vacancy-scaled binary OOF residual transfer for two-/three-cation Hf-family targets",
+    "host_min_fraction": 0.55,
+    "vacancy_min": 0.0,
+    "hf_valence_tol": 1e-06,
+    "min_support_coverage": 0.8,
+    "renormalize_supported": false,
+    "support_source": "binary chemical-system out-of-fold residuals only",
+    "three_cation_labels_used_to_construct_correction": false,
+    "validated_local_subset_n": 6,
+    "validated_global_3P_rmse_on_local_subset_K": 436.6475480612337,
+    "validated_local_transfer_rmse_on_local_subset_K": 9.232572621546607,
+    "validated_hybrid_overall_rmse_K": 143.75285144854394,
+    "binary_support_dopants": [
+      "Lu",
+      "Sc",
+      "Yb"
+    ],
+    "binary_output_semantics": "vacancy-scaled family estimate; not independent external validation",
+    "vacancy_condition": "strictly greater than vacancy_min",
+    "support_selection": "nearest nominal vacancy fraction among same-dopant same-valence eligible supports",
+    "duplicate_fraction_rule": "median signed residual",
+    "equal_distance_tie_rule": "lower vacancy fraction",
+    "scaling_equation": "Delta_local = sum_supported alpha_k * (fV_target/fV_reference_k) * residual_OOF_k",
+    "concentration_scaling_independently_validated": false,
+    "local_subset_validation_scope": "six same-vacancy-fraction targets; same-study composition transfer"
+  }
+}

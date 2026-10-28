@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use OxiMelt, please cite the associated paper."
+title: "OxiMelt: Formula-only Oxide Melting Point Calculator"
+license: MIT
+repository-code: "https://github.com/lishuigong/OxiMelt"
+authors:
+  - family-names: Li
+    given-names: Jiang
+  - family-names: Wang
+    given-names: Mingfu
+  - family-names: Liu
+    given-names: Hongsheng
+  - family-names: Gao
+    given-names: Junfeng
+  - family-names: Ding
+    given-names: Feng
+  - family-names: Cheng
+    given-names: Yuan
+  - family-names: Zhang
+    given-names: Xinghong
+  - family-names: Han
+    given-names: Jiecai

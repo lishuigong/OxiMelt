@@ -1,0 +1,21 @@
+{
+  "three_cation_global": {
+    "n": 176,
+    "RMSE_K": 164.80833096485583,
+    "MAE_K": 133.37265287655475,
+    "R2": 0.8424844963596705
+  },
+  "three_cation_hierarchical": {
+    "n": 176,
+    "RMSE_K": 143.7528514107603,
+    "MAE_K": 118.77277461786811,
+    "R2": 0.8801610708986974
+  },
+  "supported_family": {
+    "n": 6,
+    "RMSE_K": 9.23257266961164,
+    "MAE_K": 7.4563068413539595,
+    "R2": 0.9201037718291045
+  },
+  "interpretation": "Global zero-shot metrics and supported-family metrics are distinct evaluations. The six family targets have vacancy-scaling factors of one and do not test concentration scaling."
+}
