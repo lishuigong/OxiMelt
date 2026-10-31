@@ -2,7 +2,7 @@
 
 OxiMelt estimates oxide melting temperatures from chemical formulas using a frozen three-coefficient analytical relation. It combines a composition-weighted simple-oxide reference with effective cation-pair interactions. A nominal-vacancy-scaled residual correction is available for supported HfO2-rich compositions.
 
-Associated manuscript: **From Binary to Multication Oxides: Composable Cation-Pair Interactions for Melting-Point Prediction**.
+Associated manuscript: Composable Cation Pair Interactions Enable Transferable Melting Point Prediction in Multication Oxides.
 
 ## Run
 
